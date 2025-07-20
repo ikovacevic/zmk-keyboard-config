@@ -1,2 +1,8 @@
-
 .zmk/
+.west/
+build_left/
+build_right/
+eyelash_corne/
+modules/
+zephyr/
+zmk/
