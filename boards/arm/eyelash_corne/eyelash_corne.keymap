@@ -29,6 +29,27 @@
               &kp C &kp O &kp M
             >;
         };
+
+        m_vim_copy: m_vim_copy {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+            <&kp DQT &kp PLUS &kp Y>;
+        };
+
+        m_vim_paste: m_vim_paste {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+            <&kp DQT &kp PLUS &kp P>;
+        };
+
+        m_vim_paste: m_vim_sys_cb {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings =
+            <&kp DQT &kp PLUS>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -87,14 +108,14 @@
     &trans               &none                &sk LA(LS(LCTL))     &sk LG(LA(LS(LCTL))) &kp RALT             &none                                                                     &kp PG_UP                                          &kp HOME             &kp PG_DN            &kp PG_UP            &kp END              &kp PSCRN            &tog 1
 
 /* +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+                               +--------------------+--------------------+--------------------+        +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-   | [L: SYM]           | GUI (sk)           | ALT (sk)           | CTRL (sk)          | SHIFT (sk)     *** |                    |                               | LEFT               | PRINT SCREEN       | RIGHT              |        | LEFT               | DOWN           *** | UP                 | RIGHT              | REPEAT             | [L: CRO]           |
+   | [L: SYM]           | GUI (sk)           | ALT (sk)           | CTRL (sk)          | SHIFT (sk)     *** |                    |                               | HOME               | PRINT SCREEN       | END                |        | LEFT               | DOWN           *** | UP                 | RIGHT              | REPEAT             | [L: CRO]           |
    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+                               +--------------------+--------------------+--------------------+        +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+  */
-    &trans               &sk LGUI             &sk LALT             &sk LCTRL            &sk LSHIFT           &none                                                &kp HOME             &mkp PSCRN            &kp END                      &kp LEFT             &kp DOWN             &kp UP               &kp RIGHT            &key_repeat          &trans
+    &trans               &sk LGUI             &sk LALT             &sk LCTRL            &sk LSHIFT           &none                                                &kp HOME             &kp PSCRN            &kp END                       &kp LEFT             &kp DOWN             &kp UP               &kp RIGHT            &key_repeat          &trans
 
 /* +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+      +--------------------+                        +--------------------+                             +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-   | [L: FUN]           |                    |                    |                    |                    |                    |      | VOLUME / MUTE      |                        | DOWN               |                             | E-MAIL             | VIM COPY           | VIM PASTE          | VIM SYS CLIPBOARD  | INSERT             | [L: LED]           |
+   | [L: FUN]           |                    |                    |                    |                    |                    |      | VOLUME / MUTE      |                        | PAGE DOWN          |                             | E-MAIL             | VIM COPY           | VIM PASTE          | VIM SYS CLIPBOARD  | INSERT             | [L: LED]           |
    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+      +--------------------+                        +--------------------+                             +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+  */
-    &trans               &none                &none                &none                &none                &none                       &trans                                        &kp PG_DN                                          &m_email             &none                &none                &none                &kp INSERT           &trans
+    &trans               &none                &none                &none                &none                &none                       &trans                                        &kp PG_DN                                          &m_email             &m_vim_copy          &m_vim_paste         &m_vim_sys_cb        &kp INSERT           &trans
 
 
 /*                                                                +--------------------+--------------------+--------------------+                                                                                                       +--------------------+--------------------+--------------------+
