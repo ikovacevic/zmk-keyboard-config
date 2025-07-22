@@ -7,10 +7,13 @@
 
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        sk_qck: sk_qck {
+          compatible = "zmk,behavior-sticky-key";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <3000>;
+          quick-release;
+          ignore-modifiers;
         };
 
         m_email: m_email {
@@ -114,11 +117,165 @@
           bindings = <&kp LC(B) &kp Z>;
         };
 
+        // Croatian characters with caps word support
+        hr_c_acute_cw: hr_c_acute_cw {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_c_acute>, <&m_hr_c_acute_upper>;
+        };
+
+        hr_c_caron_cw: hr_c_caron_cw {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_c_caron>, <&m_hr_c_caron_upper>;
+        };
+
+        hr_d_stroke_cw: hr_d_stroke_cw {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_d_stroke>, <&m_hr_d_stroke_upper>;
+        };
+
+        hr_s_caron_cw: hr_s_caron_cw {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_s_caron>, <&m_hr_s_caron_upper>;
+        };
+
+        hr_z_caron_cw: hr_z_caron_cw {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_z_caron>, <&m_hr_z_caron_upper>;
+        };
+
         m_caps_word: m_caps_word {
           compatible = "zmk,behavior-macro";
           wait-ms = <10>;
           #binding-cells = <0>;
           bindings = <&kp F24 &caps_word>;
+        };
+
+        // Croatian character macros - lowercase
+        m_hr_c_acute: m_hr_c_acute {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp SQT &kp C>;
+        };
+
+        m_hr_c_caron: m_hr_c_caron {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp C>;
+        };
+
+        m_hr_d_stroke: m_hr_d_stroke {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp MINUS &kp D>;
+        };
+
+        m_hr_s_caron: m_hr_s_caron {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp S>;
+        };
+
+        m_hr_z_caron: m_hr_z_caron {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp Z>;
+        };
+
+        // Croatian character macros - uppercase
+        m_hr_c_acute_upper: m_hr_c_acute_upper {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp SQT &kp LS(C)>;
+        };
+
+        m_hr_c_caron_upper: m_hr_c_caron_upper {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp LS(C)>;
+        };
+
+        m_hr_d_stroke_upper: m_hr_d_stroke_upper {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp MINUS &kp LS(D)>;
+        };
+
+        m_hr_s_caron_upper: m_hr_s_caron_upper {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp LS(S)>;
+        };
+
+        m_hr_z_caron_upper: m_hr_z_caron_upper {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          tap-ms = <10>;
+          bindings = <&kp RALT &kp V &kp LS(Z)>;
+        };
+
+        // Croatian character mod-morph behaviors
+        hr_c_acute: hr_c_acute {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_c_acute>, <&m_hr_c_acute_upper>;
+        };
+
+        hr_c_caron: hr_c_caron {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_c_caron>, <&m_hr_c_caron_upper>;
+        };
+
+        hr_d_stroke: hr_d_stroke {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_d_stroke>, <&m_hr_d_stroke_upper>;
+        };
+
+        hr_s_caron: hr_s_caron {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_s_caron>, <&m_hr_s_caron_upper>;
+        };
+
+        hr_z_caron: hr_z_caron {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          bindings = <&m_hr_z_caron>, <&m_hr_z_caron_upper>;
         };
     };
 
@@ -185,7 +342,7 @@
 /* +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+
    | [L: SYM]       | GUI (sk)       | ALT (sk)       | CTRL (sk)      | SHIFT (sk) *** |                |                           | HOME           | PRINT SCREEN   | END            |        | LEFT           | DOWN       *** | UP             | RIGHT          | REPEAT         | [L: CRO]       |
    +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+  */
-    &trans           &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHIFT       &none                                        &kp HOME         &kp PSCRN        &kp END                   &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &key_repeat      &trans
+    &trans           &sk LGUI         &sk LALT         &sk LCTRL        &sk_qck LSHIFT   &none                                        &kp HOME         &kp PSCRN        &kp END                   &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &key_repeat      &trans
 
 /* +----------------+----------------+----------------+----------------+----------------+----------------+      +----------------+                    +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+
    | [L: FUN]       |                |                |                |                |                |      | VOLUME / MUTE  |                    | PAGE DOWN      |                         | E-MAIL         | VIM COPY       | VIM PASTE      | VIM SYS CLPB   | INSERT         | [L: LED]       |
@@ -281,12 +438,12 @@
 /* +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+
    | [L: SYM]       | \              | Š              | Đ              | _          *** | |              |                           | [PREV]         | [PAUSE]        | [NEXT]         |        |                | RSHIFT     *** | RCTRL          | RALT           | RGUI           | [L: CRO]       |
    +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+  */
-    &trans           &kp BSLH         &none            &none            &kp UNDER        &kp PIPE                                     &trans           &trans           &trans                    &none            &kp RSHFT        &kp RCTRL        &kp RALT         &kp RGUI         &trans
+    &trans           &kp BSLH         &hr_s_caron_cw   &hr_d_stroke_cw  &kp UNDER        &kp PIPE                                     &trans           &trans           &trans                    &none            &kp RSHFT        &kp RCTRL        &kp RALT         &kp RGUI         &trans
 
 /* +----------------+----------------+----------------+----------------+----------------+----------------+      +----------------+                    +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+
    | [L: FUN]       | Ž              | Ć              | Č              | ?              |                |      | SCROLL WHEEL   |                    | [STOP]         |                         |                |                |                |                |                | [L: LED]       |
    +----------------+----------------+----------------+----------------+----------------+----------------+      +----------------+                    +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+  */
-    &trans           &none            &none            &none            &kp QMARK        &none                   &kp PG_DN                             &trans                                     &none            &none            &none            &none            &none            &trans
+    &trans           &hr_z_caron_cw   &hr_c_acute_cw   &hr_c_caron_cw   &kp QMARK        &none                   &kp PG_DN                             &trans                                     &none            &none            &none            &none            &none            &trans
 
 /*                                                    +----------------+----------------+----------------+                                                                                       +----------------+----------------+----------------+
                                                       | ^              | #              | $              |                                                                                       | CAPS LOCK      |                |                |
