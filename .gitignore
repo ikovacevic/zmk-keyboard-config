@@ -1,8 +1,8 @@
-.zmk/
-.west/
-build_left/
-build_right/
-eyelash_corne/
-modules/
-zephyr/
-zmk/
+/.zmk/
+/.west/
+/build_left/
+/build_right/
+/eylash_corne/
+/modules/
+/zephyr/
+/zmk/
