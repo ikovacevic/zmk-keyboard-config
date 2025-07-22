@@ -166,7 +166,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp SQT &kp C>;
+          bindings = <&kp RALT &kp N1 &kp C>;
         };
 
         m_hr_c_caron: m_hr_c_caron {
@@ -174,7 +174,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp C>;
+          bindings = <&kp RALT &kp N2 &kp C>;
         };
 
         m_hr_d_stroke: m_hr_d_stroke {
@@ -182,7 +182,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp MINUS &kp D>;
+          bindings = <&kp RALT &kp N3 &kp D>;
         };
 
         m_hr_s_caron: m_hr_s_caron {
@@ -190,7 +190,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp S>;
+          bindings = <&kp RALT &kp N4 &kp S>;
         };
 
         m_hr_z_caron: m_hr_z_caron {
@@ -198,7 +198,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp Z>;
+          bindings = <&kp RALT &kp N5 &kp Z>;
         };
 
         // Croatian character macros - uppercase
@@ -207,7 +207,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp SQT &kp LS(C)>;
+          bindings = <&kp RALT &kp N1 &kp LS(C)>;
         };
 
         m_hr_c_caron_upper: m_hr_c_caron_upper {
@@ -215,7 +215,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp LS(C)>;
+          bindings = <&kp RALT &kp N2 &kp LS(C)>;
         };
 
         m_hr_d_stroke_upper: m_hr_d_stroke_upper {
@@ -223,7 +223,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp MINUS &kp LS(D)>;
+          bindings = <&kp RALT &kp N3 &kp LS(D)>;
         };
 
         m_hr_s_caron_upper: m_hr_s_caron_upper {
@@ -231,7 +231,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp LS(S)>;
+          bindings = <&kp RALT &kp N4 &kp LS(S)>;
         };
 
         m_hr_z_caron_upper: m_hr_z_caron_upper {
@@ -239,7 +239,7 @@
           #binding-cells = <0>;
           wait-ms = <10>;
           tap-ms = <10>;
-          bindings = <&kp RALT &kp V &kp LS(Z)>;
+          bindings = <&kp RALT &kp N5 &kp LS(Z)>;
         };
 
         // Croatian character mod-morph behaviors
