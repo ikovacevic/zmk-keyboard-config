@@ -117,6 +117,114 @@
           bindings = <&kp LC(B) &kp Z>;
         };
 
+        m_pad_wapp: m_pad_wapp {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp W>;
+        };
+
+        m_pad_gmail: m_pad_gmail {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp M>;
+        };
+
+        m_pad_telegram: m_pad_telegram {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp T>;
+        };
+
+        m_pad_logseq: m_pad_logseq {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp L>;
+        };
+
+        m_pad_inbox: m_pad_inbox {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp I>;
+        };
+
+        m_pad_notes: m_pad_notes {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N>;
+        };
+
+        m_pad_ffox0: m_pad_ffox0 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N7>;
+        };
+
+        m_pad_ffox1: m_pad_ffox1 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N8>;
+        };
+
+        m_pad_ffox2: m_pad_ffox2 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N9>;
+        };
+
+        m_pad_audio: m_pad_audio {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp A>;
+        };
+
+        m_pad_ai: m_pad_ai {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp C>;
+        };
+
+        m_pad_term0: m_pad_term0 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N0>;
+        };
+
+        m_pad_term1: m_pad_term1 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N1>;
+        };
+
+        m_pad_term2: m_pad_term2 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N2>;
+        };
+
+        m_pad_term3: m_pad_term3 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N3>;
+        };
+
+        m_pad_term4: m_pad_term4 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(P) &kp N4>;
+        };
+
+        m_app_ffox: m_app_ffox {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(X) &kp F>;
+        };
+
+        m_app_term: m_app_term {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LG(X) &kp F>;
+        };
+
         // Croatian characters with caps word support
         hr_c_acute_cw: hr_c_acute_cw {
           compatible = "zmk,behavior-mod-morph";
@@ -285,12 +393,6 @@
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
     };
 
-    scroll_wheel: scroll_wheel {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -306,7 +408,7 @@
 /* +----------------+----------------+----------------+----------------+----------------+----------------+                                            +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+
    | L: MOU         | Q              | W              | E              | R              | T              |                                            | PLAY           |                         | Y              | U              | I              | O              | P              | L: APP         |
    +----------------+----------------+----------------+----------------+----------------+----------------+                                            +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+  */
-    &none            &kp Q            &kp W            &kp E            &kp R            &kp T                                                         &kp C_PLAY                                 &kp Y            &kp U            &kp I            &kp O            &kp P            &none
+    &none            &kp Q            &kp W            &kp E            &kp R            &kp T                                                         &kp C_PLAY                                 &kp Y            &kp U            &kp I            &kp O            &kp P            &sl 5
 
 /* +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+
    | L: SYM         | A              | S              | D              | F          *** | G              |                           | PREV MEDIA     | PLAY/PAUSE     | NEXT MEDIA     |        | H              | J          *** | K              | L              | ; :            | L: CRO         |
@@ -450,7 +552,39 @@
                                                       +----------------+----------------+----------------+                                                                                       +----------------+----------------+----------------+  */
                                                        &kp CARET        &kp HASH         &kp DLLR                                                                                                 &kp CLCK         &none            &none
             >;
-            sensor-bindings = <&scroll_wheel>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+        };
+
+
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //  L5: APP - Application Layer
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        layer_app {
+            display-name = "APP";
+            bindings = <
+/* +----------------+----------------+----------------+----------------+----------------+----------------+                                            +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+
+   |                |                | WAPP (Pad)     | GMAIL (Pad)    | Telegram (Pad) |                |                                            | [PLAY]         |                         |                | FFOX (Pad)     | FFOX (Pad)     | FFOX (Pad)     |                | [L: APP]       |
+   +----------------+----------------+----------------+----------------+----------------+----------------+                                            +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+  */
+    &trans           &none            &m_pad_wapp      &m_pad_gmail     &m_pad_telegram  &none                                                         &trans                                     &none            &m_pad_ffox0     &m_pad_ffox1     &m_pad_ffox2     &none            &trans
+
+/* +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+
+   | [L: SYM]       | AUDIO (Pad)    | AI/GPT (Pad)   | FFOX           | TERM       *** |                |                           | [PREV]         | [PAUSE]        | [NEXT]         |        | TERM0 (Pad)    | TERM1 (Pad)  * | TERM2 (Pad)    | TERM3 (Pad)    | TERM4 (Pad)    | [L: CRO]       |
+   +----------------+----------------+----------------+----------------+----------------+----------------+                           +----------------+----------------+----------------+        +----------------+----------------+----------------+----------------+----------------+----------------+  */
+    &trans           &m_pad_audio     &m_pad_ai        &m_app_ffox      &kp LG(ENTER)    &none                                        &trans           &trans           &trans                    &m_pad_term0     &m_pad_term1     &m_pad_term2     &m_pad_term3     &m_pad_term4     &trans
+
+/* +----------------+----------------+----------------+----------------+----------------+----------------+      +----------------+                    +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+
+   | [L: FUN]       |                |                |                |                |                |      | LOCK SCREEN    |                    | [STOP]         |                         |                |                |                |                |                | [L: LED]       |
+   +----------------+----------------+----------------+----------------+----------------+----------------+      +----------------+                    +----------------+                         +----------------+----------------+----------------+----------------+----------------+----------------+  */
+    &trans           &none            &none            &none            &none            &none                   &kp LG(LC(L))                         &trans                                     &none            &none            &none            &none            &none            &trans
+
+/*                                                    +----------------+----------------+----------------+                                                                                       +----------------+----------------+----------------+
+                                                      |                | SPLIT DOWN     | SPLIT RIGHT    |                                                                                       | CAPS LOCK      | INBOX (Pad)    | NOTES (Pad)    |
+                                                      +----------------+----------------+----------------+                                                                                       +----------------+----------------+----------------+  */
+                                                       &none            &kp LG(V)       &kp LG(B)                                                                                                 &m_pad_logseq    &m_pad_inbox     &m_pad_notes
+            >;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DEC>;
         };
     };
 };
