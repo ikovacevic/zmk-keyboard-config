@@ -39,3 +39,6 @@ CONFIG_ZMK_BLE=y
 
 #EXT POWER
 CONFIG_ZMK_EXT_POWER=y
+
+# Enable ZMK pointing device support
+CONFIG_ZMK_POINTING=y
